@@ -47,22 +47,23 @@ class PACEProcessor:
         """
         np.random.seed(int(datetime.now().timestamp()) % 1000)
         
-        # Define ocean regions with realistic chlorophyll levels
+        # Define COASTAL OCEAN regions with realistic chlorophyll levels
+        # Coordinates are positioned in ocean waters, not on land
         regions = [
-            # Gulf of Mexico - high productivity, HAB risk
-            {'name': 'Gulf of Mexico', 'lon': (-97, -80), 'lat': (24, 30),
+            # Gulf of Mexico - offshore productive waters
+            {'name': 'Gulf of Mexico', 'lon': (-95, -88), 'lat': (25, 28),
              'chl_range': (0.5, 15), 'productivity': 'high'},
-            # California Current - upwelling zone
-            {'name': 'California Current', 'lon': (-125, -120), 'lat': (32, 42),
+            # California Current - offshore upwelling zone
+            {'name': 'California Current', 'lon': (-127, -123), 'lat': (35, 40),
              'chl_range': (1, 10), 'productivity': 'high'},
-            # Atlantic Coast - coastal waters
-            {'name': 'US East Coast', 'lon': (-77, -70), 'lat': (35, 42),
+            # Atlantic Coast - offshore waters
+            {'name': 'US East Coast', 'lon': (-75, -70), 'lat': (36, 40),
              'chl_range': (0.3, 8), 'productivity': 'medium'},
-            # Caribbean - oligotrophic waters
-            {'name': 'Caribbean Sea', 'lon': (-85, -75), 'lat': (18, 25),
+            # Caribbean - oligotrophic open ocean
+            {'name': 'Caribbean Sea', 'lon': (-80, -75), 'lat': (20, 24),
              'chl_range': (0.05, 0.3), 'productivity': 'low'},
-            # Pacific Northwest - productive coastal waters
-            {'name': 'Pacific NW', 'lon': (-125, -122), 'lat': (43, 48),
+            # Pacific Northwest - offshore productive waters
+            {'name': 'Pacific NW', 'lon': (-128, -125), 'lat': (44, 47),
              'chl_range': (0.8, 12), 'productivity': 'high'},
         ]
         
