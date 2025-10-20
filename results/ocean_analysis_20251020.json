@@ -1,0 +1,76 @@
+{
+  "total_pixels": 200,
+  "good_quality_pixels": 136,
+  "mean_chlorophyll": 5.384968081491827,
+  "median_chlorophyll": 5.236451262382621,
+  "std_chlorophyll": 3.7591834562061406,
+  "min_chlorophyll": 0.05,
+  "max_chlorophyll": 15.0,
+  "mean_sst": 21.515529408666005,
+  "sst_range": [
+    15.44721369351889,
+    27.945695096095413
+  ],
+  "bloom_count": 12,
+  "bloom_percentage": 8.823529411764707,
+  "bloom_locations": [
+    {
+      "region": "Gulf of Mexico",
+      "bloom_pixels": 8
+    },
+    {
+      "region": "Pacific NW",
+      "bloom_pixels": 4
+    }
+  ],
+  "productivity_distribution": {
+    "high": 82,
+    "medium": 30,
+    "low": 24
+  },
+  "regional_stats": {
+    "Gulf of Mexico": {
+      "mean_chlorophyll": 8.611537642402691,
+      "mean_sst": 21.40486034318291,
+      "pixel_count": 32,
+      "bloom_pixels": 8
+    },
+    "California Current": {
+      "mean_chlorophyll": 5.77741292685332,
+      "mean_sst": 20.557953348072882,
+      "pixel_count": 24,
+      "bloom_pixels": 0
+    },
+    "US East Coast": {
+      "mean_chlorophyll": 4.652905087778136,
+      "mean_sst": 22.718140368607983,
+      "pixel_count": 30,
+      "bloom_pixels": 0
+    },
+    "Caribbean Sea": {
+      "mean_chlorophyll": 0.18655492996020095,
+      "mean_sst": 22.535974235739545,
+      "pixel_count": 24,
+      "bloom_pixels": 0
+    },
+    "Pacific NW": {
+      "mean_chlorophyll": 6.694772051120524,
+      "mean_sst": 20.206076751037923,
+      "pixel_count": 26,
+      "bloom_pixels": 4
+    }
+  },
+  "ocean_health_status": "WARNING - Elevated bloom risk",
+  "spatial_extent": {
+    "lon_range": [
+      -124.88165352906469,
+      -70.12281335073935
+    ],
+    "lat_range": [
+      18.51923882950069,
+      47.98682531402985
+    ]
+  },
+  "summary": "WARNING: Chl-a 5.38 mg/m\u00b3, 12 bloom pixels detected",
+  "analysis_date": "2025-10-20 14:25:03"
+}
