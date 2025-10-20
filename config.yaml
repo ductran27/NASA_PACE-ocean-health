@@ -1,0 +1,35 @@
+# Configuration for NASA PACE Ocean Monitoring System
+
+# Data source configuration
+data_sources:
+  ocean_regions:
+    - "Gulf of Mexico"
+    - "California Current"
+    - "US East Coast"
+    - "Caribbean Sea"
+    - "Pacific NW"
+  product_level: "L2"
+  parameters:
+    - "chlorophyll_a"
+    - "sst"
+    - "turbidity"
+
+# Analysis configuration
+analysis:
+  bloom_threshold_mg_m3: 10  # Harmful algal bloom threshold
+  quality_threshold: 0.6
+  productivity_levels:
+    high: 5.0
+    medium: 1.0
+    low: 0.5
+
+# Visualization configuration
+visualization:
+  style: "seaborn"
+  dpi: 200
+  colormap_chlorophyll: "YlGnBu"
+
+# Schedule (for reference - actual scheduling done in GitHub Actions)
+schedule:
+  frequency: "daily"
+  time_utc: "12:00"  # 12 PM UTC
