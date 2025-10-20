@@ -43,79 +43,76 @@ class PACEProcessor:
     def _generate_sample_ocean_data(self):
         """
         Generate sample PACE ocean color data
-        Simulates realistic chlorophyll and ocean color measurements
+        Simulates continuous coastal coverage like actual satellite observations
         """
         np.random.seed(int(datetime.now().timestamp()) % 1000)
         
-        # Define COASTAL OCEAN regions with realistic chlorophyll levels
-        # Coordinates are positioned in ocean waters, not on land
-        regions = [
-            # Gulf of Mexico - offshore productive waters
-            {'name': 'Gulf of Mexico', 'lon': (-95, -88), 'lat': (25, 28),
-             'chl_range': (0.5, 15), 'productivity': 'high'},
-            # California Current - offshore upwelling zone
-            {'name': 'California Current', 'lon': (-127, -123), 'lat': (35, 40),
-             'chl_range': (1, 10), 'productivity': 'high'},
-            # Atlantic Coast - offshore waters
-            {'name': 'US East Coast', 'lon': (-75, -70), 'lat': (36, 40),
-             'chl_range': (0.3, 8), 'productivity': 'medium'},
-            # Caribbean - oligotrophic open ocean
-            {'name': 'Caribbean Sea', 'lon': (-80, -75), 'lat': (20, 24),
-             'chl_range': (0.05, 0.3), 'productivity': 'low'},
-            # Pacific Northwest - offshore productive waters
-            {'name': 'Pacific NW', 'lon': (-128, -125), 'lat': (44, 47),
-             'chl_range': (0.8, 12), 'productivity': 'high'},
-        ]
-        
         all_pixels = []
-        pixels_per_region = 40
         
-        for region in regions:
-            lon_min, lon_max = region['lon']
-            lat_min, lat_max = region['lat']
-            chl_min, chl_max = region['chl_range']
-            
-            # Generate pixel locations
-            lons = np.random.uniform(lon_min, lon_max, pixels_per_region)
-            lats = np.random.uniform(lat_min, lat_max, pixels_per_region)
-            
-            # Generate chlorophyll-a concentrations (mg/m³)
-            chlorophyll = np.random.lognormal(
-                mean=np.log(np.mean(region['chl_range'])),
-                sigma=0.5,
-                size=pixels_per_region
-            )
-            chlorophyll = np.clip(chlorophyll, chl_min, chl_max)
-            
-            # Detect harmful algal blooms (HAB) - chlorophyll > 10 mg/m³
-            is_bloom = chlorophyll > 10
-            
-            # Generate other ocean color parameters
-            sst = np.random.uniform(15, 28, pixels_per_region)  # Sea surface temp
-            turbidity = np.random.lognormal(0, 0.8, pixels_per_region)
-            
-            # Quality flag based on cloud cover and sun glint
-            quality = np.random.choice(['good', 'medium', 'poor'], 
-                                      pixels_per_region, p=[0.6, 0.3, 0.1])
-            
-            for i in range(pixels_per_region):
+        # Generate continuous coverage along US coastlines
+        # Pacific Coast - from California to Washington
+        for lat in np.arange(32, 48, 1.5):
+            lons = np.random.uniform(-128, -123, 8)
+            lats = np.full(8, lat) + np.random.uniform(-0.5, 0.5, 8)
+            chl = np.random.lognormal(np.log(3), 0.6, 8)
+            for i in range(8):
                 all_pixels.append({
                     'pixel_id': f'PX_{len(all_pixels):04d}',
                     'longitude': lons[i],
                     'latitude': lats[i],
-                    'chlorophyll_a_mg_m3': chlorophyll[i],
-                    'sst_celsius': sst[i],
-                    'turbidity_ntu': turbidity[i],
-                    'is_harmful_bloom': is_bloom[i],
-                    'region_name': region['name'],
-                    'productivity_level': region['productivity'],
-                    'quality_flag': quality[i],
-                    'observation_time': datetime.now() - timedelta(hours=np.random.randint(0, 24))
+                    'chlorophyll_a_mg_m3': np.clip(chl[i], 0.5, 12),
+                    'sst_celsius': np.random.uniform(12, 18),
+                    'turbidity_ntu': np.random.lognormal(0, 0.5),
+                    'is_harmful_bloom': chl[i] > 10,
+                    'region_name': 'Pacific Coast',
+                    'productivity_level': 'high',
+                    'quality_flag': np.random.choice(['good', 'medium'], p=[0.7, 0.3]),
+                    'observation_time': datetime.now() - timedelta(hours=np.random.randint(0, 12))
+                })
+        
+        # Gulf of Mexico - from Texas to Florida
+        for lon in np.arange(-97, -80, 1.5):
+            lats = np.random.uniform(25, 29, 8)
+            lons_array = np.full(8, lon) + np.random.uniform(-0.5, 0.5, 8)
+            chl = np.random.lognormal(np.log(2), 0.8, 8)
+            for i in range(8):
+                all_pixels.append({
+                    'pixel_id': f'PX_{len(all_pixels):04d}',
+                    'longitude': lons_array[i],
+                    'latitude': lats[i],
+                    'chlorophyll_a_mg_m3': np.clip(chl[i], 0.3, 15),
+                    'sst_celsius': np.random.uniform(22, 28),
+                    'turbidity_ntu': np.random.lognormal(0.3, 0.6),
+                    'is_harmful_bloom': chl[i] > 10,
+                    'region_name': 'Gulf of Mexico',
+                    'productivity_level': 'high',
+                    'quality_flag': np.random.choice(['good', 'medium'], p=[0.7, 0.3]),
+                    'observation_time': datetime.now() - timedelta(hours=np.random.randint(0, 12))
+                })
+        
+        # Atlantic Coast - from Florida to Maine
+        for lat in np.arange(30, 44, 1.5):
+            lons = np.random.uniform(-76, -70, 8)
+            lats = np.full(8, lat) + np.random.uniform(-0.5, 0.5, 8)
+            chl = np.random.lognormal(np.log(1), 0.7, 8)
+            for i in range(8):
+                all_pixels.append({
+                    'pixel_id': f'PX_{len(all_pixels):04d}',
+                    'longitude': lons[i],
+                    'latitude': lats[i],
+                    'chlorophyll_a_mg_m3': np.clip(chl[i], 0.2, 8),
+                    'sst_celsius': np.random.uniform(16, 24),
+                    'turbidity_ntu': np.random.lognormal(0, 0.6),
+                    'is_harmful_bloom': chl[i] > 10,
+                    'region_name': 'Atlantic Coast',
+                    'productivity_level': 'medium',
+                    'quality_flag': np.random.choice(['good', 'medium'], p=[0.7, 0.3]),
+                    'observation_time': datetime.now() - timedelta(hours=np.random.randint(0, 12))
                 })
         
         df = pd.DataFrame(all_pixels)
         
-        print(f"  Processed {len(df)} ocean color pixels")
+        print(f"  Processed {len(df)} ocean color pixels along US coastlines")
         print(f"  Detected {df['is_harmful_bloom'].sum()} potential bloom pixels")
         return df
     
