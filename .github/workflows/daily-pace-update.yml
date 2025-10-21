@@ -2,8 +2,8 @@ name: Daily PACE Ocean Update
 
 on:
   schedule:
-    # Run every day at 12:00 PM UTC
-    - cron: '0 12 * * *'
+    # Run 4 times per day: 3am, 9am, 3pm, 9pm UTC
+    - cron: '0 3,9,15,21 * * *'
   
   # Allow manual trigger
   workflow_dispatch:
