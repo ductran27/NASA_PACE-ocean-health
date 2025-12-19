@@ -1,54 +1,54 @@
 {
   "total_pixels": 264,
-  "good_quality_pixels": 180,
-  "mean_chlorophyll": 2.406426152856547,
-  "median_chlorophyll": 2.006395877272909,
-  "std_chlorophyll": 1.8490427654571797,
-  "min_chlorophyll": 0.2857021322905473,
-  "max_chlorophyll": 9.844181537590828,
-  "mean_sst": 20.139426160729556,
+  "good_quality_pixels": 182,
+  "mean_chlorophyll": 2.4159117478539085,
+  "median_chlorophyll": 1.9263418719823178,
+  "std_chlorophyll": 1.9050859614524693,
+  "min_chlorophyll": 0.20477399609999525,
+  "max_chlorophyll": 8.566680596735562,
+  "mean_sst": 20.24606025371151,
   "sst_range": [
-    12.07264440596064,
-    27.960087867380274
+    12.00538990503204,
+    27.810795436643403
   ],
   "bloom_count": 0,
   "bloom_percentage": 0.0,
   "bloom_locations": [],
   "productivity_distribution": {
-    "high": 124,
-    "medium": 56
+    "high": 125,
+    "medium": 57
   },
   "regional_stats": {
     "Pacific Coast": {
-      "mean_chlorophyll": 3.198667916603579,
-      "mean_sst": 14.93954389902998,
-      "pixel_count": 63,
+      "mean_chlorophyll": 3.516301655688723,
+      "mean_sst": 15.208098573712112,
+      "pixel_count": 59,
       "bloom_pixels": 0
     },
     "Gulf of Mexico": {
-      "mean_chlorophyll": 2.666905777335266,
-      "mean_sst": 25.16628957392055,
-      "pixel_count": 61,
+      "mean_chlorophyll": 2.615576614996845,
+      "mean_sst": 24.993381502059876,
+      "pixel_count": 66,
       "bloom_pixels": 0
     },
     "Atlantic Coast": {
-      "mean_chlorophyll": 1.2314174348339606,
-      "mean_sst": 20.513603201487097,
-      "pixel_count": 56,
+      "mean_chlorophyll": 1.0457207690172807,
+      "mean_sst": 19.963894231412787,
+      "pixel_count": 57,
       "bloom_pixels": 0
     }
   },
   "ocean_health_status": "NORMAL - Moderate productivity",
   "spatial_extent": {
     "lon_range": [
-      -127.99776233260899,
-      -70.22978019781851
+      -127.93640962265282,
+      -70.05353803059238
     ],
     "lat_range": [
-      25.011893641337696,
-      47.37405841514184
+      25.00645023169884,
+      47.48011510911763
     ]
   },
-  "summary": "NORMAL: Chl-a 2.41 mg/m\u00b3",
-  "analysis_date": "2025-12-19 15:17:46"
+  "summary": "NORMAL: Chl-a 2.42 mg/m\u00b3",
+  "analysis_date": "2025-12-19 21:15:22"
 }
