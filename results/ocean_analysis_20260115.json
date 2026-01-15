@@ -1,0 +1,63 @@
+{
+  "total_pixels": 264,
+  "good_quality_pixels": 198,
+  "mean_chlorophyll": 2.583192477130136,
+  "median_chlorophyll": 1.931547089282946,
+  "std_chlorophyll": 2.1481821918817574,
+  "min_chlorophyll": 0.22094524251358133,
+  "max_chlorophyll": 15.0,
+  "mean_sst": 20.17835591056202,
+  "sst_range": [
+    12.002531604821943,
+    27.929650203256323
+  ],
+  "bloom_count": 3,
+  "bloom_percentage": 1.5151515151515151,
+  "bloom_locations": [
+    {
+      "region": "Gulf of Mexico",
+      "bloom_pixels": 1
+    },
+    {
+      "region": "Pacific Coast",
+      "bloom_pixels": 2
+    }
+  ],
+  "productivity_distribution": {
+    "high": 141,
+    "medium": 57
+  },
+  "regional_stats": {
+    "Pacific Coast": {
+      "mean_chlorophyll": 3.7780288593525375,
+      "mean_sst": 14.849480161067607,
+      "pixel_count": 64,
+      "bloom_pixels": 2
+    },
+    "Gulf of Mexico": {
+      "mean_chlorophyll": 2.497488640553153,
+      "mean_sst": 24.87488117359768,
+      "pixel_count": 77,
+      "bloom_pixels": 1
+    },
+    "Atlantic Coast": {
+      "mean_chlorophyll": 1.3573971605370496,
+      "mean_sst": 19.817226133612817,
+      "pixel_count": 57,
+      "bloom_pixels": 0
+    }
+  },
+  "ocean_health_status": "NORMAL - Moderate productivity",
+  "spatial_extent": {
+    "lon_range": [
+      -127.97284759038754,
+      -70.04549858076811
+    ],
+    "lat_range": [
+      25.08968157804387,
+      47.3673757531062
+    ]
+  },
+  "summary": "NORMAL: Chl-a 2.58 mg/m\u00b3, 3 bloom pixels detected",
+  "analysis_date": "2026-01-15 04:02:52"
+}
