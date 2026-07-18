@@ -1,59 +1,63 @@
 {
   "total_pixels": 264,
-  "good_quality_pixels": 181,
-  "mean_chlorophyll": 2.3837482227856315,
-  "median_chlorophyll": 1.8838892803793788,
-  "std_chlorophyll": 1.759763382221629,
-  "min_chlorophyll": 0.2516610687934086,
-  "max_chlorophyll": 11.312561961139986,
-  "mean_sst": 20.26431284775254,
+  "good_quality_pixels": 183,
+  "mean_chlorophyll": 2.836375873344168,
+  "median_chlorophyll": 1.8176276529222806,
+  "std_chlorophyll": 2.538023133988391,
+  "min_chlorophyll": 0.23932058731933917,
+  "max_chlorophyll": 11.828005190327316,
+  "mean_sst": 20.241599916024402,
   "sst_range": [
-    12.057221479994304,
-    27.99818957079553
+    12.058931420092739,
+    27.960376980182517
   ],
-  "bloom_count": 1,
-  "bloom_percentage": 0.5524861878453038,
+  "bloom_count": 6,
+  "bloom_percentage": 3.278688524590164,
   "bloom_locations": [
     {
       "region": "Gulf of Mexico",
-      "bloom_pixels": 1
+      "bloom_pixels": 2
+    },
+    {
+      "region": "Pacific Coast",
+      "bloom_pixels": 4
     }
   ],
   "productivity_distribution": {
-    "high": 125,
-    "medium": 56
+    "high": 131,
+    "medium": 52
   },
   "regional_stats": {
     "Pacific Coast": {
-      "mean_chlorophyll": 3.3163294322703165,
-      "mean_sst": 14.85621664383572,
-      "pixel_count": 59,
-      "bloom_pixels": 0
+      "mean_chlorophyll": 3.8131602525172394,
+      "mean_sst": 15.086415404531307,
+      "pixel_count": 63,
+      "bloom_pixels": 4
     },
     "Gulf of Mexico": {
-      "mean_chlorophyll": 2.4571604036488512,
-      "mean_sst": 25.166178336710622,
-      "pixel_count": 66,
-      "bloom_pixels": 1
+      "mean_chlorophyll": 3.167379507297843,
+      "mean_sst": 24.990258033864404,
+      "pixel_count": 68,
+      "bloom_pixels": 2
     },
     "Atlantic Coast": {
-      "mean_chlorophyll": 1.314685806775472,
-      "mean_sst": 20.18492987917859,
-      "pixel_count": 56,
+      "mean_chlorophyll": 1.2201131234066014,
+      "mean_sst": 20.277520535465644,
+      "pixel_count": 52,
       "bloom_pixels": 0
     }
   },
   "ocean_health_status": "NORMAL - Moderate productivity",
   "spatial_extent": {
     "lon_range": [
-      -127.99684660881559,
-      -70.01462021922036
+      -127.99358570538908,
+      -70.03252073940382
     ],
     "lat_range": [
-      25.08673710941276,
-      46.82011495589762
+      25.08742874181901,
+      47.404188145420164
     ]
   },
-  "summary": "NORMAL: Chl-a 2.38 mg/m\u00b3, 1 bloom pixels detected",
-  "analysis_date": "2026-07-18 02:53:52"
+  "summary": "NORMAL: Chl-a 2.84 mg/m\u00b3, 6 bloom pixels detected",
+  "analysis_date": "2026-07-18 05:32:22"
 }
